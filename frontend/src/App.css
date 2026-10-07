@@ -1,0 +1,20 @@
+:root { --bg:#EEF2F5; --ink:#1B2A41; --muted:#5C6B7A; --accent:#0F8B8D; --chip:#FFD166; } /* palette */
+* { box-sizing: border-box; } /* predictable sizing */
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 "IBM Plex Sans", system-ui, sans-serif; } /* base text */
+main { max-width:720px; margin:0 auto; padding:48px 20px; } /* centered column */
+h1 { font-size:2.6rem; margin:0 0 4px; letter-spacing:-0.02em; } /* big title */
+header p { color:var(--muted); margin:0 0 20px; } /* subtitle */
+.file { display:inline-block; padding:8px 14px; border:1.5px dashed var(--accent); color:var(--accent); border-radius:8px; cursor:pointer; } /* upload button */
+.status { margin-left:12px; color:var(--muted); font-size:.9rem; } /* status text */
+form { display:flex; gap:8px; margin:28px 0 16px; } /* search row */
+form input { flex:1; padding:12px 14px; border:1.5px solid var(--ink); border-radius:8px; font:inherit; background:#fff; } /* search box */
+form button { padding:0 20px; border:0; border-radius:8px; background:var(--ink); color:#fff; font:inherit; cursor:pointer; } /* search button */
+audio { width:100%; margin-bottom:16px; } /* full-width player */
+ul { list-style:none; padding:0; margin:0; display:grid; gap:8px; } /* result list */
+li button { all:unset; box-sizing:border-box; width:100%; display:flex; gap:14px; align-items:flex-start; padding:12px 14px; background:#fff; border-radius:8px; cursor:pointer; } /* result row */
+li button:hover, li button:focus-visible { outline:2px solid var(--accent); } /* hover and keyboard focus */
+li.on button { background:#E3F4F4; } /* active result */
+.time { background:var(--chip); padding:2px 8px; border-radius:6px; font-weight:600; font-variant-numeric:tabular-nums; } /* timestamp chip */
+.body { flex:1; display:grid; gap:2px; } /* text column */
+.body span { color:var(--muted); font-size:.92rem; } /* transcript snippet */
+.score { color:var(--accent); font-weight:600; font-size:.85rem; } /* similarity percent */

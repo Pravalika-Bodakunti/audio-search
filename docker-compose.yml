@@ -1,0 +1,16 @@
+services:  # list of containers
+  backend:  # our FastAPI app
+    build: ./backend  # build from backend/Dockerfile
+    ports: ["8000:8000"]  # expose the API on localhost:8000
+    volumes:  # keep data outside the container
+      - ./backend/uploads:/app/uploads  # saved audio files
+      - ./backend/chroma_db:/app/chroma_db  # vector database
+      - hf_cache:/root/.cache/huggingface  # downloaded models (avoids re-download)
+  frontend:  # our React app
+    image: node:20  # official Node image
+    working_dir: /app  # run commands from /app
+    volumes: ["./frontend:/app"]  # mount the frontend code
+    command: sh -c "npm install && npm run dev -- --host"  # install then start Vite
+    ports: ["5173:5173"]  # expose the UI on localhost:5173
+volumes:  # named volumes
+  hf_cache:  # model cache volume
