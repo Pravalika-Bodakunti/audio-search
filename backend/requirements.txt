@@ -2,5 +2,6 @@ fastapi
 uvicorn
 python-multipart
 faster-whisper
+av<19
 sentence-transformers
 chromadb
